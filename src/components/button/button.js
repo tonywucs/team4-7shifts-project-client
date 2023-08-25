@@ -1,5 +1,5 @@
 import "@7shifts/sous-chef/dist/index.css";
-import "../Button/Button.scss"
+import "./Button.scss"
 
 function Button({ text, icon, publishHandler }) {
     return (

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../App.scss"
-import backgroundImage from "../../assets/images/schedule2.png"
+import "../App.scss"
+import backgroundImage from "../assets/images/schedule2.png"
 import { IconPaperPlane } from '@7shifts/sous-chef';
-import Button from "../../Components/Button/Button";
-import RiskNotify from "../../Components/RiskNotify/RiskNotify";
+import Button from "../components/Button/Button";
+import RiskNotify from "../components/RiskNotify/RiskNotify";
 
 
 const FeaturePage = () => {
