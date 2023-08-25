@@ -1,6 +1,6 @@
 .background__image {
-  background-image: url("./assets/images/schedule.png");
-  //   background-size: cover;
+  // background-image: url("./assets/images/ScheduleBefore.png");
+  background-size: cover;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -18,3 +18,38 @@ html {
 //   // // margin: 20%;
 //   // // position: relative;
 // }
+
+.button__risk {
+  position: absolute;
+  top: 3.4rem;
+  background-color: transparent;
+  z-index: 1000;
+  width: 15rem;
+  height: 10rem;
+  left: 70rem;
+  border: none;
+  // color: #e46c64;
+  // font-family: "Proxima Nova", sans-serif;
+  // font-weight: bold;
+  // background-color: #fff;
+  // border-radius: 20px;
+  // padding: 0.8rem 1.3rem;
+  // border: 1px solid #e46c64;
+}
+
+.cover {
+  height: 3rem;
+  width: 10rem;
+  position: absolute;
+  background-color: #fcf0f0;
+  top: 35rem;
+  left: 13rem;
+}
+
+.underline {
+  position: absolute;
+  top: 36rem;
+  left: 64rem;
+  padding: 0rem 1rem;
+  background-color: #fcf0f0;
+}

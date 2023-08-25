@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.scss"
-import backgroundImage from "../assets/images/schedule2.png"
+import backgroundImage from "../assets/images/screenshotBefore.png"
 import { IconPaperPlane } from '@7shifts/sous-chef';
 import Button from "../components/Button/Button";
 import RiskNotify from "../components/RiskNotify/RiskNotify";
 import ModalForm from "../components/ModalForm/ModalForm";
+import dottedLine from "../assets/images/Underline.png"
 
 
 const FeaturePage = () => {
@@ -17,6 +18,9 @@ const FeaturePage = () => {
         console.log("click")
     }
 
+    const showTip = () => {
+        console.log("click tip")
+    }
 
     return (
         <div>
@@ -32,7 +36,11 @@ const FeaturePage = () => {
              <ModalForm 
              setIsOpen={setIsOpen}
              />
+            
             }
+             <button onClick={showTip} className="button__risk"> </button>
+             <div className="cover"></div>
+             {/* <img src={dottedLine} className="underline"/> */}
             
         </div>
     );
