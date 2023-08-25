@@ -1,6 +1,6 @@
 import { Tooltip, Inline, IconQuestionCircle, Text } from "@7shifts/sous-chef";
 
-const ToolTip = ({overlay}) => {
+const ToolTip = ({overlay, theme}) => {
     return (
         <>
             {/* Example of Tooltip with Icon&Text */}
@@ -8,7 +8,7 @@ const ToolTip = ({overlay}) => {
                 <Tooltip
                     overlay={overlay}
                     placement="bottom"
-                    theme="black"
+                    theme={theme}
                 >
                     <span>
                         <IconQuestionCircle color="grey-400" />

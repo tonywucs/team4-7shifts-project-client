@@ -49,19 +49,13 @@ const FeaturePage = () => {
 
              <Tooltip
                 header="Reschedule Risk?"
-                overlay={<div>We found these employees based on their availability, skill level, and predicted sales.{' '}<a href="##">Learn More.</a>{' '}</div>}
+                overlay={<div>We identified shifts that have a high risk of rescheduling based on weather, calendar and employee data.{' '}<a href="##">Learn More.</a>{' '}</div>}
                 placement="bottom"
                 theme="white"
                 >
                 <button onMouseEnter={showTip} className="button__risk"> </button>
              </Tooltip>
-{/* 
-             {isToolTip && 
-             <ToolTip
-             delayOnClose
-             header= "Reschedule Risk"
-             overlay= {<div>We found these employees based on their availability, skill level, and predicted sales. <a href="##">Learn More.</a></div>}
-             placement="botton"/>} */}
+
             
         </div>
     );
