@@ -1,0 +1,33 @@
+.modalBackdrop {
+    z-index: 2;
+    background-color: #767676;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+
+    &__employee {
+        margin: 1rem 0;
+    }
+
+    &__divider {
+        margin: 5rem;
+    }
+
+    &__status {
+        display: flex;
+        background-color: #e76767;
+    }
+
+    &__schedule {
+        display: flex;
+    }
+
+    &__scheduleExtras {
+        display: flex;
+    }
+}
