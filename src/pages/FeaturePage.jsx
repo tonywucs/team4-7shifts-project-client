@@ -27,36 +27,34 @@ const FeaturePage = () => {
     }
 
     return (
-        <div>
-            <img className="background__image" src={backgroundImage} />
-            <Button
-                icon={<IconPaperPlane />}
-                text="Publish changes"
-                publishHandler={publishHandler}
-             />
-            <RiskNotify 
-            setIsOpen={setIsOpen}/>
-            {isOpen &&
-             <ModalForm 
-             setIsOpen={setIsOpen}
-             />
-            
-            }
-    
-             {/* <div className="cover"></div> */}
-             {/* <img src={dottedLine} className="underline"/> */}
+        <div className="titlescreen">
+            <div className="scheduleBox">
+                <div className="scheduleButtons">
+                    <Button
+                        icon={<IconPaperPlane />}
+                        text="Publish changes"
+                        publishHandler={publishHandler}
+                    />
+                    <RiskNotify
+                        setIsOpen={setIsOpen} />
+                    {isOpen &&
+                        <ModalForm
+                            setIsOpen={setIsOpen}
+                        />
 
+                    }
 
-             <Tooltip
-                header="Reschedule Risk?"
-                overlay={<div>We identified shifts that have a high risk of rescheduling based on weather, calendar and employee data.{' '}<a href="##">Learn More.</a>{' '}</div>}
-                placement="bottom"
-                theme="white"
-                >
-                <button onMouseEnter={showTip} className="button__risk"> </button>
-             </Tooltip>
-
-            
+                    <Tooltip
+                        header="Reschedule Risk?"
+                        overlay={<div>We identified shifts that have a high risk of rescheduling based on weather, calendar and employee data.{' '}<a href="##">Learn More.</a>{' '}</div>}
+                        placement="bottom"
+                        theme="white"
+                    >
+                        <button onMouseEnter={showTip} className="button__risk"> </button>
+                    </Tooltip>
+                </div>
+                {/* <img className="background__image" src={backgroundImage} /> */}
+            </div>
         </div>
     );
 };

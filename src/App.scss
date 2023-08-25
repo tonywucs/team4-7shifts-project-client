@@ -1,9 +1,9 @@
 .background__image {
   // background-image: url("./assets/images/ScheduleBefore.png");
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+  // background-size: cover;
+  // height: 100%;
+  // width: 100%;
+  // z-index: -1;
 }
 
 html {
@@ -12,7 +12,7 @@ html {
 }
 
 .button__risk {
-  position: absolute;
+  // position: absolute;
   top: 3.4rem;
   background-color: transparent;
   z-index: 1000;
@@ -26,32 +26,53 @@ html {
 .cover {
   height: 3rem;
   width: 10rem;
-  position: absolute;
-  background-color: #fcf0f0;
-  top: 35rem;
-  left: 13rem;
+  // position: absolute;
+  // background-color: #fcf0f0;
+  background-color: blue;
+  // top: 35rem;
+  // left: 13rem;
 }
 
 .underline {
-  position: absolute;
-  top: 36rem;
-  left: 64rem;
+  // position: absolute;
+  // top: 36rem;
+  // left: 64rem;
   padding: 0rem 1rem;
   background-color: #fcf0f0;
 }
 
 .backup__icon {
-  position: absolute;
-  top: 27.2rem;
-  left: 67.8rem;
+  // position: absolute;
+  // top: 27.2rem;
+  // left: 67.8rem;
+  background-color: blue;
 }
 
 .home {
   position: absolute;
-  top: 0rem;
-  left: 0rem;
-  // background-color: blue;
+  // top: 0rem;
+  // left: 0rem;
+  background-color: blue;
   height: 6rem;
   width: 7rem;
   cursor: pointer;
+}
+
+.titlescreen {
+  width: 100vw;
+  height: 1080px;
+}
+
+.scheduleBox {
+  display: flex;
+  background-image: url('./assets/images/screenshotBefore.png');
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.scheduleButtons {
+  display: flex;
+  justify-content: center;
 }
