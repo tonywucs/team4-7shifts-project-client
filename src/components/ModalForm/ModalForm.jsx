@@ -15,6 +15,7 @@ import './Modal.scss'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import ToolTipIcon from "../ToolTipIcon/ToolTipIcon";
+import ModalFormList from "../ModalFormList/ModalFormList";
 
 const times = {
     start: "3:00 PM",
@@ -31,11 +32,7 @@ const people = {
 const ModalForm = ({ setIsOpen }) => {
 
     const navigate = useNavigate();
-    const [employees, setEmployees] = useState([])
-    const [person, setPerson] = useState(null)
-    const [checkbox, setCheckbox] = useState(false);
-
-    const choices = [
+    const [employees, setEmployees] = useState([
         {
             label: 'Ron Swanson',
             value: 'sc_rs'
@@ -43,7 +40,10 @@ const ModalForm = ({ setIsOpen }) => {
         {
             label: 'Tom Haverford',
             value: 'sc_th'
-        },
+        }])
+    const [person, setPerson] = useState(null)
+
+    const choices = [
         {
             label: 'Amy Poehler',
             value: 'lc_ap'
@@ -65,11 +65,6 @@ const ModalForm = ({ setIsOpen }) => {
         const selectedPerson = `${input.value}`
         setPerson(selectedPerson)
     }
-
-    function handleCheckbox() {
-        setCheckbox(!checkbox);
-    }
-
     return (
         <>
             <main className="modalBackdrop">
@@ -100,27 +95,7 @@ const ModalForm = ({ setIsOpen }) => {
                     <div className="modal__caption">
                         <Text as="caption" color="black">Select all the employees you want as back up for Vivian.</Text>
                     </div>
-                    <div className="modal__backupsList">
-
-                        <div className="modal__backupsListItem">
-                            {checkbox ?
-                                <CheckboxField
-                                    checked
-                                    name="backup"
-                                    onBlur={function noRefCheck() { }}
-                                    onChange={handleCheckbox}
-                                /> :
-                                <CheckboxField
-                                    name="backup"
-                                    onBlur={function noRefCheck() { }}
-                                    onChange={handleCheckbox}
-                                />
-                            }
-
-                            <span className="modal__backups-name"><Text as="body" color="black" emphasis="bold">Ron Swanson</Text></span>
-                            <span className="modal__backups-level"><Text as="body" color="black">Intermediate Cook</Text></span>
-                        </div>
-                    </div>
+                    <ModalFormList employees={employees} />
                     <div className="modal__search">
                         <SelectField
                             id="employees"
@@ -139,14 +114,6 @@ const ModalForm = ({ setIsOpen }) => {
                         setIsOpen(false);
                         navigate("/");
                     }}>Close modal</Button>
-                    {
-                        employees.length > 0 ?
-                            employees.map((val) => {
-                                return (
-                                    <h1>{val}</h1>
-                                );
-                            }) : ""
-                    }
                 </div >
             </main >
         </>
