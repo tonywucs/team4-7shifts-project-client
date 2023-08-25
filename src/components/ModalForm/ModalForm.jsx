@@ -5,12 +5,15 @@ import {
     SelectField,
     Link,
     IconClock,
-    Button
+    Button,
+    IconSearch,
+    CheckboxField
 } from "@7shifts/sous-chef";
 import "@7shifts/sous-chef/dist/index.css";
 import './Modal.scss'
 
 import { useState } from 'react';
+import ToolTipIcon from "../ToolTipIcon/ToolTipIcon";
 
 const times = {
     start: "3:00 PM",
@@ -24,11 +27,31 @@ const people = {
     lc_wf: "Will Ferrel"
 }
 
+const choices = [
+    {
+        label: 'Ron Swanson',
+        value: 'sc_rs'
+    },
+    {
+        label: 'Tom Haverford',
+        value: 'sc_th'
+    },
+    {
+        label: 'Amy Poehler',
+        value: 'lc_ap'
+    },
+    {
+        label: 'Will Ferrel',
+        value: 'lc_wf'
+    }
+]
+
 const ModalForm = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [employees, setEmployees] = useState([])
-    const [person, setPerson] = useState(null)
+    const [employees, setEmployees] = useState([]);
+    const [person, setPerson] = useState(null);
+    const [checkbox, setCheckbox] = useState(false);
 
     // If person exists and is an employee then add element
     function handleClick() {
@@ -42,73 +65,77 @@ const ModalForm = () => {
         setPerson(selectedPerson)
     }
 
+    function handleCheckbox() {
+        setCheckbox(!checkbox);
+    }
+
     return (
         <>
             <Button onClick={() => setIsOpen(true)}>Show modal</Button>
             <main className="modalBackdrop">
-            {isOpen && (
+                {isOpen && (
                     <div className="modal">
-                        <div className="modal__employee"><span><Text as="h2">Vivian Cheung</Text></span></div>
-                        <div className="modal__status"><Text as="body" color="white">Risk Detected</Text></div>
+                        <div className="modal__employee"><span><Text as="h2" color="black">Vivian Cheung</Text></span></div>
+                        <div className="modal__status"><Text as="body" color="white" emphasis="bold">Risk Detected</Text></div>
                         <div className="modal__schedule">
-                            <div className="modal__startTime"><Text as="body">{times.start}</Text></div>
+                            <div className="modal__timeFrame"><Text as="body" color="black">{times.start}</Text></div>
                             <IconArrowRight color="grey-400" />
-                            <div className="modal__endTime"><Text as="body">{times.end}</Text></div>
+                            <div className="modal__timeFrame"><Text as="body" color="black">{times.end}</Text></div>
                             <input type="checkbox" />
-                            <span><Text as="body">Close</Text></span>
+                            <span><Text as="body" color="black">Close</Text></span>
                             <input type="checkbox" />
-                            <span><Text as="body">BD</Text></span>
-                            <IconQuestionCircle color="grey-400" />
+                            <span><Text as="body" color="black">BD</Text></span>
+                            <ToolTipIcon position="top" />
                         </div>
                         <div className="modal__scheduleExtras">
-                            <Link
-                                href="/"
-                                onClick={function noRefCheck() { }}
-                                theme="primary"
-                            >
-                                <Text as="body" color="blueberry-400"> or use common shift times</Text>
-                            </Link>
-                            <IconClock color="grey-400" />
-                            <div className="modal__hours"><Text as="body">9 Hours</Text></div>
+                            <Text as="body" color="blueberry-400"> or use common shift times</Text>
+                            <div className="modal__hours">
+                                <IconClock color="grey-400" />
+                                <span><Text as="body">9 Hours</Text></span>
+                            </div>
                         </div>
+                        <div className="modal__backupsHeader">
+                            <Text as="h3" color="black">Suggested Back Ups</Text>
+                            <ToolTipIcon position="bottom" />
+                        </div>
+                        <div className="modal__caption">
+                            <Text as="caption" color="black">Select all the employees you want as back up for Vivian.</Text>
+                        </div>
+                        <div className="modal__backupsList">
 
-                        <SelectField
-                            id="employees"
-                            name="employees"
-                            onBlur={function noRefCheck() { }}
-                            onChange={handleChange}
-                            options={[
-                                {
-                                    label: 'Senior Cook',
-                                    options: [
-                                        {
-                                            label: 'Ron Swanson',
-                                            value: 'sc_rs'
-                                        },
-                                        {
-                                            label: 'Tom Haverford',
-                                            value: 'sc_th'
-                                        }
-                                    ]
-                                },
-                                {
-                                    label: 'Line Cook',
-                                    options: [
-                                        {
-                                            label: 'Amy Poehler',
-                                            value: 'lc_ap'
-                                        },
-                                        {
-                                            label: 'Will Ferrel',
-                                            value: 'lc_wf'
-                                        }
-                                    ]
+                            <div className="modal__backupsListItem">
+                                {checkbox ?
+                                    <CheckboxField
+                                        checked
+                                        name="backup"
+                                        onBlur={function noRefCheck() { }}
+                                        onChange={handleCheckbox}
+                                    /> :
+                                    <CheckboxField
+                                        name="backup"
+                                        onBlur={function noRefCheck() { }}
+                                        onChange={handleCheckbox}
+                                    />
                                 }
-                            ]}
-                            placeholder="Search for an employee"
-                        />
+
+                                <span className="modal__backups-name"><Text as="body" color="black" emphasis="bold">Ron Swanson</Text></span>
+                                <span className="modal__backups-level"><Text as="body" color="black">Intermediate Cook</Text></span>
+                            </div>
+                        </div>
+                        <div className="modal__search">
+                            <SelectField
+                                id="employees"
+                                name="employees"
+                                onBlur={function noRefCheck() { }}
+                                onChange={handleChange}
+                                options={choices}
+                                placeholder="Search for an employee"
+                            />
+                        </div>
+                        <div className="modal__searchBtn">
+                            <span className="modal__searchIcon"><IconSearch color="grey-400" /></span>
+                        </div>
                         <div className="button" onClick={handleClick}>Click Me</div>
-                        <Button onClick={() => setIsOpen(false)}>Close modal</Button>
                         {employees.length > 0 ?
                             employees.map((val) => {
                                 return (
@@ -116,8 +143,8 @@ const ModalForm = () => {
                                 );
                             }) : ""}
                     </div>
-                
-            )}
+
+                )}
             </main>
         </>
     );

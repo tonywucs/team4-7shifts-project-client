@@ -1,12 +1,12 @@
 import FormOutline from "../components/FormOutline/FormOutline";
 import ModalForm from "../components/ModalForm/ModalForm";
-import ToolTip from "../components/ToolTip/ToolTip";
+import ToolTipIcon from "../components/ToolTipIcon/ToolTipIcon";
 
 const EmployeesPage = () => {
     return (
         <>
             <ModalForm />
-            {/* <ToolTip /> */}
+            {/* <ToolTipIcon /> */}
             {/* <FormOutline /> */}
         </>
     );
