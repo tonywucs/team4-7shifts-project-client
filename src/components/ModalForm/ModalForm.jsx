@@ -67,6 +67,8 @@ const ModalForm = ({ setIsOpen }) => {
     function handleClick() {
         if (person) {
             setEmployees([...employees, person])
+            setPerson(null)
+            setAddMore(false)
         }
     }
 
@@ -130,9 +132,8 @@ const ModalForm = ({ setIsOpen }) => {
                                     placeholder="Search for an employee"
                                 />
                                 <div className="modal__searchBtn">
-                                    <span className="modal__searchIcon"><IconSearch color="white" /></span>
+                                    <span className="modal__searchIcon" onClick={handleClick}><IconSearch color="white" /></span>
                                 </div>
-                                <button className="button" onClick={handleClick}>Click Me</button>
                             </>
                         ) :
                             <>

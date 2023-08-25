@@ -89,6 +89,7 @@
         display: flex;
         align-items: center;
         padding: 1.75rem 2rem;
+        margin-right: 6rem;
         border-bottom: 1px solid #CCCCCC;
     }
 
@@ -118,6 +119,7 @@
         align-items: center;
         column-gap: 0.5rem;
         cursor: pointer;
+        height: 38px;
     }
 
     &__searchIcon {
@@ -128,14 +130,8 @@
         background-color: #48BFAD;
         height: 36px;
         width: 44px;
-        // padding: 0.4rem;
-        top: -2.35rem;
-        // right: 0.25rem;
-        border-top: 1px solid #CCCCCC;
-        border-right: 1px solid #CCCCCC;
-        border-bottom: 1px solid #CCCCCC;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        top: -36.75px;
+        right: 1px;
         cursor: pointer;
     }
 }
