@@ -7,18 +7,21 @@ import Button from "../components/Button/Button";
 import RiskNotify from "../components/RiskNotify/RiskNotify";
 import ModalForm from "../components/ModalForm/ModalForm";
 import dottedLine from "../assets/images/Underline.png"
+import ToolTip from "../components/ToolTip/ToolTip";
 
 
 const FeaturePage = () => {
 
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isToolTip, setIsToolTip] = useState(false);
 
     const publishHandler = () => {
         console.log("click")
     }
 
     const showTip = () => {
+        setIsToolTip(true);
         console.log("click tip")
     }
 
@@ -38,9 +41,13 @@ const FeaturePage = () => {
              />
             
             }
-             <button onClick={showTip} className="button__risk"> </button>
-             <div className="cover"></div>
+             <button onMouseEnter={showTip} className="button__risk"> </button>
+             {/* <div className="cover"></div> */}
              {/* <img src={dottedLine} className="underline"/> */}
+
+             {isToolTip && 
+             <ToolTip 
+             overlay = ""/>}
             
         </div>
     );

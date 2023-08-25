@@ -1,12 +1,12 @@
 import { Tooltip, Inline, IconQuestionCircle, Text } from "@7shifts/sous-chef";
 
-const ToolTip = () => {
+const ToolTip = ({overlay}) => {
     return (
         <>
             {/* Example of Tooltip with Icon&Text */}
             <Inline justifyContent="center">
                 <Tooltip
-                    overlay="Please select an employee to assist"
+                    overlay={overlay}
                     placement="bottom"
                     theme="black"
                 >
