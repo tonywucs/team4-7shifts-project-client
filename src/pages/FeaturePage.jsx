@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../App.scss"
 import backgroundImage from "../assets/images/screenshotBefore.png"
 import { IconPaperPlane, Tooltip } from '@7shifts/sous-chef';
-import Button from "../components/Button/Button";
+import Button from "../components/button/button";
 import RiskNotify from "../components/RiskNotify/RiskNotify";
 import ModalForm from "../components/ModalForm/ModalForm";
 import dottedLine from "../assets/images/Underline.png"
