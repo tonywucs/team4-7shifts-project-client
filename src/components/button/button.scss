@@ -2,8 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .button__publish {
-  background: $mint;
+  background: transparent;
   border-color: $mint;
+
   color: #fff;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 500;

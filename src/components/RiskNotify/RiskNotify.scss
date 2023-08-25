@@ -1,6 +1,5 @@
 .risk__box {
-  background-color: rgb(218, 177, 177);
-  color: red;
+  //   background-image: url(../../assets/images/riskimage.png);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,4 +8,14 @@
   position: absolute;
   top: 473px;
   right: 317px;
+}
+
+.risk__text {
+  text-align: center;
+  color: #e46c64;
+  font-family: "Proxima Nova", sans-serif;
+  height: 1.5rem;
+  width: 7rem;
+  /* border: 1rem solid transparent; */
+  background-color: #ffecec;
 }

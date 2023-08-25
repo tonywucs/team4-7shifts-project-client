@@ -5,8 +5,8 @@ function Button({ text, icon, publishHandler }) {
     return (
         <>
             <div onClick={publishHandler} className="button__publish">
-                {icon}
-                {text}
+
+
             </div>
         </>
     )

@@ -11,7 +11,7 @@ const FeaturePage = () => {
 
 
     const publishHandler = () => {
-
+        console.log("click")
     }
 
 
