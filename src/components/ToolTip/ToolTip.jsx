@@ -1,16 +1,14 @@
 import { Tooltip, Inline, IconQuestionCircle, Text } from "@7shifts/sous-chef";
 
-const ToolTipIcon = ({  header, overlay, placement }) => {
+const ToolTip = ({overlay}) => {
     return (
         <>
             {/* Example of Tooltip with Icon&Text */}
             <Inline justifyContent="center">
                 <Tooltip
-                    delayOnClose
-                    header={header}
                     overlay={overlay}
-                    placement={placement}
-                    theme="white"
+                    placement="bottom"
+                    theme="black"
                 >
                     <span>
                         <IconQuestionCircle color="grey-400" />
@@ -21,4 +19,4 @@ const ToolTipIcon = ({  header, overlay, placement }) => {
     );
 };
 
-export default ToolTipIcon;
+export default ToolTip;

@@ -110,10 +110,24 @@ const ModalForm = ({ setIsOpen }) => {
                         <span className="modal__searchIcon"><IconSearch color="grey-400" /></span>
                     </div>
                     <div className="button" onClick={handleClick}>Click Me</div>
-                    <Button onClick={() => {
-                        setIsOpen(false);
-                        navigate("/");
-                    }}>Close modal</Button>
+                    <div className="modal__buttonBox">
+                        <div className="modal__buttons">
+                            <div>
+                                <Button onClick={() => {
+                                    setIsOpen(false);
+                                    navigate("/");
+                                }}>Cancel</Button>
+                            </div>
+                            <div>
+                                <Button onClick={() => {
+                                    setIsOpen(false);
+                                    navigate("/publish");
+                                }}
+                                    theme="primary"
+                                >Save</Button>
+                            </div>
+                        </div>
+                    </div>
                 </div >
             </main >
         </>
