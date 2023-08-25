@@ -4,6 +4,7 @@ import "../../App.scss"
 import backgroundImage from "../../assets/images/schedule2.png"
 import { IconPaperPlane } from '@7shifts/sous-chef';
 import Button from "../../Components/Button/Button";
+import RiskNotify from "../../Components/RiskNotify/RiskNotify";
 
 
 const FeaturePage = () => {
@@ -21,6 +22,7 @@ const FeaturePage = () => {
                 icon={<IconPaperPlane />}
                 text="Publish changes"
                 publishHandler={publishHandler} />
+            <RiskNotify />
 
         </div>
     );
