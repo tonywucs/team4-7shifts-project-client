@@ -9,9 +9,13 @@ const ModalFormListItem = ({ data }) => {
         setCheckbox(!checkbox);
     }
 
+    function handleClickCheckbox() {
+        setCheckbox(!checkbox);
+    }
+
     return (
         <>
-            <div className="modal__backupsListItem">
+            <div className="modal__backupsListItem" onClick={handleClickCheckbox}>
                 {checkbox ?
                     <CheckboxField
                         checked
