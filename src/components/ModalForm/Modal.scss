@@ -113,4 +113,15 @@
     border: 1px solid #767676;
     cursor: pointer;
   }
+
+  &__buttonBox {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  &__buttons {
+    gap: 1rem;
+    margin: 1rem;
+  }
 }

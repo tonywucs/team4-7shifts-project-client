@@ -135,10 +135,23 @@ const ModalForm = ({ setIsOpen }) => {
                         <span className="modal__searchIcon"><IconSearch color="grey-400" /></span>
                     </div>
                     <div className="button" onClick={handleClick}>Click Me</div>
+                    <div className="modal__buttonBox">
+                    <div className="modal__buttons">
                     <Button onClick={() => {
                         setIsOpen(false);
                         navigate("/");
-                    }}>Close modal</Button>
+                    }}>Cancel</Button>
+                    
+                    <Button onClick={() => {
+                        setIsOpen(false);
+                        navigate("/publish");
+                        
+                    }}
+                    theme="primary"
+                    >Save</Button>
+                    </div>
+                    </div>
+
                     {
                         employees.length > 0 ?
                             employees.map((val) => {
