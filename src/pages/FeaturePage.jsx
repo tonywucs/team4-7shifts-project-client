@@ -55,13 +55,7 @@ const FeaturePage = () => {
                 >
                 <button onMouseEnter={showTip} className="button__risk"> </button>
              </Tooltip>
-{/* 
-             {isToolTip && 
-             <ToolTip
-             delayOnClose
-             header= "Reschedule Risk"
-             overlay= {<div>We found these employees based on their availability, skill level, and predicted sales. <a href="##">Learn More.</a></div>}
-             placement="botton"/>} */}
+
             
         </div>
     );

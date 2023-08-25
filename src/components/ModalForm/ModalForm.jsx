@@ -7,7 +7,8 @@ import {
     IconClock,
     Button,
     IconSearch,
-    CheckboxField
+    CheckboxField,
+    Tooltip
 } from "@7shifts/sous-chef";
 import "@7shifts/sous-chef/dist/index.css";
 import './Modal.scss'
@@ -15,6 +16,7 @@ import './Modal.scss'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import ToolTipIcon from "../ToolTipIcon/ToolTipIcon";
+import ToolTip from "../ToolTip/ToolTip";
 
 const times = {
     start: "3:00 PM",
@@ -74,7 +76,7 @@ const ModalForm = ({ setIsOpen }) => {
         <>
             <main className="modalBackdrop">
                 <div className="modal">
-                    <div className="modal__employee"><span><Text as="h2" color="black">Vivian Cheung</Text></span></div>
+                    <div className="modal__employee"><span><Text as="h2" color="black">Tony Wu</Text></span></div>
                     <div className="modal__status"><Text as="body" color="white" emphasis="bold">Risk Detected</Text></div>
                     <div className="modal__schedule">
                         <div className="modal__timeFrame"><Text as="body" color="black">{times.start}</Text></div>
@@ -95,7 +97,14 @@ const ModalForm = ({ setIsOpen }) => {
                     </div>
                     <div className="modal__backupsHeader">
                         <Text as="h3" color="black">Suggested Back Ups</Text>
+                        
+                        <ToolTip
+                        overlay={<div>We found these employees based on their availability, skill level, and predicted sales.{' '}<a href="##">Learn More.</a>{' '}</div>}
+                        placement="bottom"
+                        theme="white"
+                        >
                         <ToolTipIcon position="bottom" />
+                        </ToolTip>
                     </div>
                     <div className="modal__caption">
                         <Text as="caption" color="black">Select all the employees you want as back up for Vivian.</Text>
