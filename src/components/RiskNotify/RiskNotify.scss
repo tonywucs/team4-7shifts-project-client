@@ -3,11 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 9.5rem;
-  height: 4rem;
   position: absolute;
-  top: 643px;
-  right: 439px;
+  width: 17rem;
+  height: 8rem;
+  position: absolute;
+  top: 507px;
+  right: 806px;
 }
 
 .risk__text {
@@ -15,7 +16,8 @@
   color: #e46c64;
   font-family: "Proxima Nova", sans-serif;
   height: 1.5rem;
-  width: 7rem;
+  width: 10rem;
+  font-weight: bold;
   /* border: 1rem solid transparent; */
-  background-color: #ffecec;
+  background-color: #fcf0f0;
 }

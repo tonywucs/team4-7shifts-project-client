@@ -144,10 +144,24 @@ const ModalForm = ({ setIsOpen }) => {
                             </>
                         }
                     </div>
-                    <Button onClick={() => {
-                        setIsOpen(false);
-                        navigate("/");
-                    }}>Close modal</Button>
+                    <div className="modal__buttonBox">
+                        <div className="modal__buttons">
+                            <div>
+                                <Button onClick={() => {
+                                    setIsOpen(false);
+                                    navigate("/");
+                                }}>Cancel</Button>
+                            </div>
+                            <div>
+                                <Button onClick={() => {
+                                    setIsOpen(false);
+                                    navigate("/publish");
+                                }}
+                                    theme="primary"
+                                >Save</Button>
+                            </div>
+                        </div>
+                    </div>
                 </div >
             </main >
         </>

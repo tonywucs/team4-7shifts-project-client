@@ -11,7 +11,7 @@ function RiskNotify({ setIsOpen }) {
 
     return (
         <div onClick={handleClick} className="risk__box">
-            <span className="risk__text" >  Risk Detected</span>
+            {/* <span className="risk__text" >Reschedule Risk</span> */}
         </div>
     )
 }
