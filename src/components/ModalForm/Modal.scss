@@ -118,10 +118,11 @@
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   &__buttons {
     gap: 1rem;
-    margin: 1rem;
+    display: flex;
   }
 }

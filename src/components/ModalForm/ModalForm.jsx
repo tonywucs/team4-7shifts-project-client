@@ -137,11 +137,13 @@ const ModalForm = ({ setIsOpen }) => {
                     <div className="button" onClick={handleClick}>Click Me</div>
                     <div className="modal__buttonBox">
                     <div className="modal__buttons">
+                        <div>
                     <Button onClick={() => {
                         setIsOpen(false);
                         navigate("/");
                     }}>Cancel</Button>
-                    
+                    </div>
+                    <div>
                     <Button onClick={() => {
                         setIsOpen(false);
                         navigate("/publish");
@@ -149,6 +151,7 @@ const ModalForm = ({ setIsOpen }) => {
                     }}
                     theme="primary"
                     >Save</Button>
+                    </div>
                     </div>
                     </div>
 
