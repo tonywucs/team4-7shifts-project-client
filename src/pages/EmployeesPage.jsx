@@ -5,7 +5,7 @@ import ToolTip from "../components/ToolTip/ToolTip";
 const EmployeesPage = () => {
     return (
         <>
-            <ModalForm />
+            {/* <ModalForm /> */}
             {/* <ToolTip /> */}
             {/* <FormOutline /> */}
         </>
