@@ -1,16 +1,18 @@
 import "@7shifts/sous-chef/dist/index.css";
+import "../Button/Button.scss"
 
-function button({ text }) {
-
+function Button({ text, icon, publishHandler }) {
     return (
-
-
-        <div className="button__publish">
-            {text}
-        </div>
+        <>
+            <div onClick={publishHandler} className="button__publish">
+                {icon}
+                {text}
+            </div>
+        </>
     )
 
 }
 
-export default button;
+
+export default Button;
 
