@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.scss"
 import backgroundImage from "../assets/images/screenshotBefore.png"
-import { IconPaperPlane } from '@7shifts/sous-chef';
+import { IconPaperPlane, Tooltip } from '@7shifts/sous-chef';
 import Button from "../components/Button/Button";
 import RiskNotify from "../components/RiskNotify/RiskNotify";
 import ModalForm from "../components/ModalForm/ModalForm";
 import dottedLine from "../assets/images/Underline.png"
 import ToolTip from "../components/ToolTip/ToolTip";
+import ToolTipIcon from "../components/ToolTipIcon/ToolTipIcon";
 
 
 const FeaturePage = () => {
@@ -41,13 +42,26 @@ const FeaturePage = () => {
              />
             
             }
-             <button onMouseEnter={showTip} className="button__risk"> </button>
+    
              {/* <div className="cover"></div> */}
              {/* <img src={dottedLine} className="underline"/> */}
 
+
+             <Tooltip
+                header="Reschedule Risk?"
+                overlay={<div>We found these employees based on their availability, skill level, and predicted sales.{' '}<a href="##">Learn More.</a>{' '}</div>}
+                placement="bottom"
+                theme="white"
+                >
+                <button onMouseEnter={showTip} className="button__risk"> </button>
+             </Tooltip>
+{/* 
              {isToolTip && 
-             <ToolTip 
-             overlay = ""/>}
+             <ToolTip
+             delayOnClose
+             header= "Reschedule Risk"
+             overlay= {<div>We found these employees based on their availability, skill level, and predicted sales. <a href="##">Learn More.</a></div>}
+             placement="botton"/>} */}
             
         </div>
     );

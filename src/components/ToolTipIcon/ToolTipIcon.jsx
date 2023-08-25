@@ -1,14 +1,15 @@
 import { Tooltip, Inline, IconQuestionCircle, Text } from "@7shifts/sous-chef";
 
-const ToolTipIcon = ({ position }) => {
+const ToolTipIcon = ({  header, overlay, placement }) => {
     return (
         <>
             {/* Example of Tooltip with Icon&Text */}
             <Inline justifyContent="center">
                 <Tooltip
-                    header="Header"
-                    overlay={<div>Please Select <br /> More Option</div>}
-                    placement={position}
+                    delayOnClose
+                    header={header}
+                    overlay={overlay}
+                    placement={placement}
                     theme="white"
                 >
                     <span>
