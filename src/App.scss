@@ -1,3 +1,7 @@
-.hello {
-    background-color: green;
+.background__image {
+  background-image: url("./assets/images/schedule.png");
+  //   background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }

@@ -1,10 +1,29 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../../App.scss"
+import backgroundImage from "../../assets/images/schedule2.png"
+import { IconPaperPlane } from '@7shifts/sous-chef';
+import Button from "../../Components/Button/Button";
+import RiskNotify from "../../Components/RiskNotify/RiskNotify";
+
 
 const FeaturePage = () => {
+
+
+    const publishHandler = () => {
+
+    }
+
+
     return (
         <div>
-            <h1>Hello World!</h1>
+            <img className="background__image" src={backgroundImage} />
+            <Button
+                icon={<IconPaperPlane />}
+                text="Publish changes"
+                publishHandler={publishHandler} />
+            <RiskNotify />
+
         </div>
     );
 };
