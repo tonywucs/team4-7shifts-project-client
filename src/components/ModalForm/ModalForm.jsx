@@ -7,7 +7,8 @@ import {
     IconClock,
     Button,
     IconSearch,
-    CheckboxField
+    CheckboxField,
+    IconPlus
 } from "@7shifts/sous-chef";
 import "@7shifts/sous-chef/dist/index.css";
 import './Modal.scss'
@@ -35,36 +36,57 @@ const ModalForm = ({ setIsOpen }) => {
     const [employees, setEmployees] = useState([
         {
             label: 'Ron Swanson',
-            value: 'sc_rs'
+            value: 'sc_rs',
+            level: 'Intermediate Cook'
         },
         {
             label: 'Tom Haverford',
-            value: 'sc_th'
+            value: 'sc_th',
+            level: 'Senior Cook'
         }])
     const [person, setPerson] = useState(null)
-
-    const choices = [
+    const [choices, setChoices] = useState([
         {
             label: 'Amy Poehler',
-            value: 'lc_ap'
+            value: 'lc_ap',
+            level: 'Intermediate Cook'
         },
         {
             label: 'Will Ferrel',
-            value: 'lc_wf'
+            value: 'lc_wf',
+            level: 'Junior Cook'
         }
-    ]
+    ])
+    const [addMore, setAddMore] = useState(false)
+
+    function handleAddMoreClick() {
+        setAddMore(!addMore)
+    }
 
     // If person exists and is an employee then add element
     function handleClick() {
-        if (people[person] && !employees.includes(people[person])) {
-            setEmployees([...employees, people[person]])
+        if (person) {
+            setEmployees([...employees, person])
         }
     }
 
     function handleChange(input) {
-        const selectedPerson = `${input.value}`
-        setPerson(selectedPerson)
+        const selectedPerson = `${input.label}`
+        const isAt = choices.findIndex((em) => {
+            return em.label === selectedPerson
+        })
+
+        if (isAt >= 0) {
+            const newPerson = choices.splice(isAt, 1)
+            console.log(newPerson[0]);
+            const newChoices = choices.filter((choice) => {
+                return !(newPerson === choice)
+            })
+            setChoices(newChoices)
+            setPerson(newPerson[0])
+        }
     }
+
     return (
         <>
             <main className="modalBackdrop">
@@ -97,19 +119,31 @@ const ModalForm = ({ setIsOpen }) => {
                     </div>
                     <ModalFormList employees={employees} />
                     <div className="modal__search">
-                        <SelectField
-                            id="employees"
-                            name="employees"
-                            onBlur={function noRefCheck() { }}
-                            onChange={handleChange}
-                            options={choices}
-                            placeholder="Search for an employee"
-                        />
+                        {addMore ? (
+                            <>
+                                <SelectField
+                                    id="employees"
+                                    name="employees"
+                                    onBlur={function noRefCheck() { }}
+                                    onChange={handleChange}
+                                    options={choices}
+                                    placeholder="Search for an employee"
+                                />
+                                <div className="modal__searchBtn">
+                                    <span className="modal__searchIcon"><IconSearch color="white" /></span>
+                                </div>
+                                <button className="button" onClick={handleClick}>Click Me</button>
+                            </>
+                        ) :
+                            <>
+                                <div className="modal__addMore" onClick={handleAddMoreClick}>
+                                    <IconPlus color="blueberry-400" />
+                                    <Text as="body" color="blueberry-400" emphasis="bold">Add More</Text>
+                                </div>
+                                <div className="modal__searchBtn"></div>
+                            </>
+                        }
                     </div>
-                    <div className="modal__searchBtn">
-                        <span className="modal__searchIcon"><IconSearch color="grey-400" /></span>
-                    </div>
-                    <div className="button" onClick={handleClick}>Click Me</div>
                     <Button onClick={() => {
                         setIsOpen(false);
                         navigate("/");
