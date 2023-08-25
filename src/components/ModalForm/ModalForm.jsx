@@ -11,6 +11,8 @@ import "@7shifts/sous-chef/dist/index.css";
 import './Modal.scss'
 
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 const times = {
     start: "3:00 PM",
@@ -24,9 +26,11 @@ const people = {
     lc_wf: "Will Ferrel"
 }
 
-const ModalForm = () => {
+const ModalForm = ({setIsOpen}) => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+
+    // const [isOpen, setIsOpen] = useState(false);
     const [employees, setEmployees] = useState([])
     const [person, setPerson] = useState(null)
 
@@ -44,9 +48,9 @@ const ModalForm = () => {
 
     return (
         <>
-            <Button onClick={() => setIsOpen(true)}>Show modal</Button>
+            {/* <Button onClick={() => setIsOpen(true)}>Show modal</Button> */}
             <main className="modalBackdrop">
-            {isOpen && (
+            
                     <div className="modal">
                         <div className="modal__employee"><span><Text as="h2">Vivian Cheung</Text></span></div>
                         <div className="modal__status"><Text as="body" color="white">Risk Detected</Text></div>
@@ -108,7 +112,14 @@ const ModalForm = () => {
                             placeholder="Search for an employee"
                         />
                         <div className="button" onClick={handleClick}>Click Me</div>
-                        <Button onClick={() => setIsOpen(false)}>Close modal</Button>
+                        {/* <Button onClick={() => 
+                            setIsOpen(false)
+                            navigate("/")}>
+                                Close modal</Button> */}
+                        <Button onClick={() => {
+                         setIsOpen(false);
+                         navigate("/");
+                        }}>Close modal</Button>
                         {employees.length > 0 ?
                             employees.map((val) => {
                                 return (
@@ -117,7 +128,7 @@ const ModalForm = () => {
                             }) : ""}
                     </div>
                 
-            )}
+            
             </main>
         </>
     );

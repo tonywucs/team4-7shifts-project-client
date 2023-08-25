@@ -2,9 +2,7 @@ import { useState } from "react";
 import "./RiskNotify.scss"
 
 
-function RiskNotify() {
-
-    const [isOpen, setIsOpen] = useState(false);
+function RiskNotify({ setIsOpen }) {
 
     const handleClick = () => {
         console.log("click")

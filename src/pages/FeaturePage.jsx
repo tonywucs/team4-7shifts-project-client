@@ -5,10 +5,13 @@ import backgroundImage from "../assets/images/schedule2.png"
 import { IconPaperPlane } from '@7shifts/sous-chef';
 import Button from "../components/Button/Button";
 import RiskNotify from "../components/RiskNotify/RiskNotify";
+import ModalForm from "../components/ModalForm/ModalForm";
 
 
 const FeaturePage = () => {
 
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const publishHandler = () => {
         console.log("click")
@@ -21,9 +24,16 @@ const FeaturePage = () => {
             <Button
                 icon={<IconPaperPlane />}
                 text="Publish changes"
-                publishHandler={publishHandler} />
-            <RiskNotify />
-
+                publishHandler={publishHandler}
+             />
+            <RiskNotify 
+            setIsOpen={setIsOpen}/>
+            {isOpen &&
+             <ModalForm 
+             setIsOpen={setIsOpen}
+             />
+            }
+            
         </div>
     );
 };
